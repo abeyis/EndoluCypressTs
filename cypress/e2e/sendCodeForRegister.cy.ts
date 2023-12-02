@@ -12,8 +12,7 @@ describe('Send Code For Register', () => {
         postSendCode.getCode(user)
         .then((response)=>{
             expect(response.status).to.be.equals(200)
-            
-            
+              
         })
     });
     
