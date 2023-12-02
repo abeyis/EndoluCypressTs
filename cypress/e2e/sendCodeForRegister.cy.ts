@@ -24,6 +24,7 @@ describe('Send Code For Register', () => {
 			const match = inputString.match(regex);
 			user.setSecurityCode(extractedNumber = match ? match[1] : null);
 			cy.log(extractedNumber)
+            
 		});
     });
     
