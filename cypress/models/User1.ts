@@ -7,8 +7,10 @@ export default class User1{
     private countryId : number;
     private securityCode : string;
 
+    
+
     constructor(){
-        this.identifier="sametendolu@mail7.io";
+        this.identifier="smtendolu@mail7.io";
         this.isMail=true;
         this.countryId=212;
         
