@@ -2,6 +2,7 @@ import SendCode from "../api/login/SendCode";
 import User1 from "../models/User1";
 import GetSentCodeToEmailApi2 from "../api/login/GetSenTCodeToEmailApi2";
 import CheckCode from "../api/login/CheckCode";
+import BrowserUtils from "../utils/BrowserUtils";
 
 describe('Login By Check Code', () => {
 
@@ -9,7 +10,8 @@ const getSecurityCode=new SendCode();
 const user=new User1();
 const getSentCode=new GetSentCodeToEmailApi2();
 const registerByCheckCode=new CheckCode()
-let extractedNumber;
+const browserUtils=new BrowserUtils();
+
 
     it('Create Security Code (Send-Code)', () => {
         getSecurityCode.createSecurityCode(user)
@@ -18,11 +20,7 @@ let extractedNumber;
     it('Get Sent Code To Email', () => {
 		getSentCode.getCode(user)
 		.then((response)=>{
-			const inputString =response.body.data[0].mail_source.headers.subject;
-			const regex = /Endolu Giriş Kodu: (\d+)/;
-			const match = inputString.match(regex);
-			user.setSecurityCode(extractedNumber = match ? match[1] : null);
-			cy.log(extractedNumber)
+			user.setSecurityCode(browserUtils.getCode(response));
 		});
 	});
 
