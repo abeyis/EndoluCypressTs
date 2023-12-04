@@ -15,4 +15,17 @@ export default class LoginBy_sametendoluEmail{
         })
     }
 
+    createToken2(user:User){
+        return cy.request({
+            method:'POST',
+            url:'/api/Auth/loginbymail',
+            body:{
+                "email": "sametgaleri@mail7.io",
+                "securityCode": "",
+                test:user.getTest()
+            }
+        })
+    }
+
+
 }
