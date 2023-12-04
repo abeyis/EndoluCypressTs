@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker';
-import GetSecurityCodeByEmailApi from '../api/login/GetSecurityCodeByEmailApi';
 
 export default class User {
     private email: string;
@@ -12,10 +11,10 @@ export default class User {
 
 
     constructor() {
-        this.email = "testendolu@mail7.io",
-            this.username = faker.internet.userName();
+        this.username = faker.internet.userName();
         this.firstName = faker.person.firstName();
         this.lastName = faker.person.lastName();
+        this.email = 'testendolu@mail7.io',
         this.test = true
     }
 
