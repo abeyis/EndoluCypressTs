@@ -7,7 +7,7 @@ export default class RegisterByEmail{
             method:'POST',
             url:'/api/Auth/registerbymail',
             headers:{
-                "Authorization" : `Bearer +${user.getToken()}`,
+                "Authorization" : `Bearer ${user.getToken()}`,
                 "Content-Type" : "application/json"
             },
             body:{
