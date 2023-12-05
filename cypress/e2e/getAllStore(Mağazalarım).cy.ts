@@ -15,13 +15,9 @@ describe('Get All Store (Magazalarım)', () => {
 
         login.createToken2(user)
         .then((response)=>{
-
             expect(response.status).to.be.equal(200)
-            
             store.setToken(response.body.data.token)
-
         })
-        
     });
 
     it('Get Store (Mağazam)', () => {
@@ -34,7 +30,5 @@ describe('Get All Store (Magazalarım)', () => {
             
         })
     });
-
-
 
 });

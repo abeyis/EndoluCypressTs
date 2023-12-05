@@ -1,5 +1,5 @@
 import LoginBy_sametendoluEmail from "../api/login/LoginBy_sametendoluEmail";
-import UsercartsList from "../api/login/UsercartsList";
+import UsercartsList from "../api/user/UsercartsList";
 import User from "../models/User";
 
 describe('login and usercarts (sepetim)', () => {

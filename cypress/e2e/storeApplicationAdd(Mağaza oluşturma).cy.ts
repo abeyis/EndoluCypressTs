@@ -1,5 +1,5 @@
 import LoginBy_sametendoluEmail from "../api/login/LoginBy_sametendoluEmail";
-import StoreApplicationAdd from "../api/login/StoreApplicationAdd";
+import StoreApplicationAdd from "../api/store/StoreApplicationAdd";
 import User from "../models/User";
 import Store from "../models/Store";
 
@@ -28,8 +28,6 @@ describe('Store Application Add (Mağaza Oluşturma)', () => {
             expect(response.status).to.be.equal(200)
             expect(response.body.message).to.equal('Mağaza başvurunuz alındı')
         })
-
-
     });
 
 });
