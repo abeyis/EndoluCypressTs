@@ -28,6 +28,7 @@ describe('Store Application Add (Mağaza Oluşturma)', () => {
             expect(response.status).to.be.equal(200)
             expect(response.body.message).to.equal('Mağaza başvurunuz alındı')
         })
+
     });
 
 });

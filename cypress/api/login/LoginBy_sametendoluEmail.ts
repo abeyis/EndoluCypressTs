@@ -15,6 +15,7 @@ export default class LoginBy_sametendoluEmail{
         })
     }
 
+
     createToken2(user:User){
         return cy.request({
             method:'POST',
@@ -26,6 +27,5 @@ export default class LoginBy_sametendoluEmail{
             }
         })
     }
-
 
 }

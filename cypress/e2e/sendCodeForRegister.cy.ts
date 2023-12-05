@@ -9,7 +9,7 @@ describe('Send Code For Register', () => {
     const postSendCode=new GetSentCodeToEmailApi();
     const getCode=new GetSentCodeToEmailApi2();
     const browserUtils=new BrowserUtils();
-    
+
     it('Send Code', () => {
         postSendCode.getCode(user)
         .then((response)=>{
