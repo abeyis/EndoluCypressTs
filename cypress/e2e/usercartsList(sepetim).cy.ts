@@ -1,15 +1,15 @@
-import LoginBy_sametendoluEmail from "../api/login/LoginBy_sametendoluEmail";
-import UsercartsList from "../api/user/UsercartsList";
+import LoginByEmailApi from "../api/login/LoginByEmailApi";
+import UsercartsList from "../api/login/UsercartsList";
 import User from "../models/User";
 
 describe('login and usercarts (sepetim)', () => {
     
-    const login=new LoginBy_sametendoluEmail();
+    const login=new LoginByEmailApi()
     const user =new User();
     const carts=new UsercartsList();
 
     it('login and token', () => {
-        login.createToken(user)
+        login.createToken(user,user.getEmail())
         .then((response)=>{
             expect(response.status).to.be.equal(200)
             user.setToken(response.body.data.token)

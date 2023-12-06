@@ -1,17 +1,21 @@
 
-import GetUserOrders from "../api/user/GetUserOrders";
-import LoginBy_sametendoluEmail from "../api/login/LoginBy_sametendoluEmail";
+import GetUserOrders from "../api/login/GetUserOrders";
+import LoginByEmailApi from "../api/login/LoginByEmailApi";
 import User from "../models/User";
 
 
 describe('get user order (siparişlerim)', () => {
 
-    const login=new LoginBy_sametendoluEmail();
+    const login=new LoginByEmailApi();
     const user=new User();
     const order=new GetUserOrders();
 
-    it('login and get token', () => {
-        login.createToken(user)
+    beforeEach( ()=>{
+        cy.fixture('LoginEmail').as('data');
+    })
+
+    it('login and get token', function(){
+        login.createToken(user,this.data.email)
         .then((response)=>{
             expect(response.status).to.be.eqls(200)
             user.setToken(response.body.data.token)
@@ -21,15 +25,10 @@ describe('get user order (siparişlerim)', () => {
     });
 
     it('orders(siparişlerim)', () => {
-        
         order.orderUser(user)
         .then((response)=>{
              expect(response.status).to.be.equal(200)
              cy.log(response.body)
         })
-
     });
-
-
-
 });

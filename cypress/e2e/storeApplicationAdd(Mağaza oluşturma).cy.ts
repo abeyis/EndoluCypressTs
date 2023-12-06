@@ -1,18 +1,18 @@
-import LoginBy_sametendoluEmail from "../api/login/LoginBy_sametendoluEmail";
-import StoreApplicationAdd from "../api/store/StoreApplicationAdd";
+import LoginByEmailApi from "../api/login/LoginByEmailApi";
+import StoreApplicationAdd from "../api/login/StoreApplicationAdd";
 import User from "../models/User";
 import Store from "../models/Store";
 
 describe('Store Application Add (Mağaza Oluşturma)', () => {
     
-    const login=new LoginBy_sametendoluEmail()
-    const user=new User()
-    const store=new Store()
+    const login=new LoginByEmailApi();
+    const user=new User();
+    const store=new Store();
     const add=new StoreApplicationAdd()
     
     it('Login and Token', () => {
         
-        login.createToken(user)
+        login.createToken(user,user.getEmail())
         .then((response)=>{
             expect(response.status).to.be.equal(200)
             store.setToken(response.body.data.token)

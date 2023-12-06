@@ -20,7 +20,7 @@ describe('Login By Email Test Cases', () => {
 	});
 
 	it('Get Sent Code To Email', () => {
-		getSentCode.getCode(user)
+		getSentCode.getCode(user.getEmail())
 			.then((response) => {
 				user.setSecurityCode(browserUtils.getCode(response));
 				cy.log(browserUtils.getCode(response))
@@ -29,7 +29,7 @@ describe('Login By Email Test Cases', () => {
 
 	it('Create access Token', () => {
 
-		loginByEmailApi.createToken(user)
+		loginByEmailApi.createToken(user, user.getEmail())
 			.then((response) => {
 				expect(response.status).to.be.equal(200);
 				user.setToken(response.body.data.token);
