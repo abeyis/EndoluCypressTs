@@ -67,8 +67,8 @@ export default class Store{
     getStoryToken(){
         return this.storyToken
     }
-    setStoryToken(){
-        this.storyToken=this.storyToken
+    setStoryToken(storyToken:string){
+        this.storyToken=storyToken
     }
 
     getToken() {
