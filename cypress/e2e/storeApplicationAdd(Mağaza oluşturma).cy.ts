@@ -2,7 +2,7 @@ import LoginByEmailApi from "../api/login/LoginByEmailApi";
 import StoreApplicationAdd from "../api/login/StoreApplicationAdd";
 import User from "../models/User";
 import Store from "../models/Store";
-import SchemaUtils from "../utils/SchemaUtils";
+import SchemaUtils from "../utils/SchemaValidationUtils";
 import Schemas from "../models/Schemas";
 
 describe('Store Application Add (Mağaza Oluşturma)', () => {

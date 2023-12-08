@@ -3,7 +3,7 @@ import UsercartsList from "../api/login/UsercartsList";
 import Schemas from "../models/Schemas";
 
 import User from "../models/User";
-import SchemaUtils from "../utils/SchemaUtils";
+import SchemaUtils from "../utils/SchemaValidationUtils";
 
 describe('login and usercarts (sepetim)', () => {
     

@@ -3,7 +3,7 @@ import GetAllStore from "../api/stores/GetAllStore";
 import Schemas from "../models/Schemas";
 import Store from "../models/Store";
 import User from "../models/User";
-import SchemaUtils from "../utils/SchemaUtils";
+import SchemaUtils from "../utils/SchemaValidationUtils";
 
 
 describe('Get All Store (Magazalarım)', () => {

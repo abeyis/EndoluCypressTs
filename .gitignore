@@ -2,3 +2,5 @@ node_modules
 videos
 allure-results
 screenshots
+package.json
+package-lock.json
