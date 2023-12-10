@@ -6,6 +6,7 @@ import User from "../models/User";
 import SchemaUtils from "../utils/SchemaValidationUtils";
 
 
+
 describe('Get All Store (Magazalarım)', () => {
 
     const login=new LoginByEmailApi()
@@ -28,7 +29,6 @@ describe('Get All Store (Magazalarım)', () => {
     });
 
     it('Get Store (Mağazam)', () => {
-        
         allStore.getStore(store)
         .then((response)=>{
             expect(response.status).to.be.eql(200)
