@@ -1,18 +1,22 @@
-import LoginBy_sametendoluEmail from "../api/login/LoginBy_sametendoluEmail";
-import StoreApplicationAdd from "../api/store/StoreApplicationAdd";
+import LoginByEmailApi from "../api/login/LoginByEmailApi";
+import StoreApplicationAdd from "../api/login/StoreApplicationAdd";
 import User from "../models/User";
 import Store from "../models/Store";
+import SchemaUtils from "../utils/SchemaValidationUtils";
+import Schemas from "../models/Schemas";
 
 describe('Store Application Add (Mağaza Oluşturma)', () => {
     
-    const login=new LoginBy_sametendoluEmail()
-    const user=new User()
-    const store=new Store()
+    const login=new LoginByEmailApi();
+    const user=new User();
+    const store=new Store();
     const add=new StoreApplicationAdd()
+    const util=new SchemaUtils()
+    const schema=new Schemas()
     
     it('Login and Token', () => {
         
-        login.createToken(user)
+        login.createToken(user,user.getEmail())
         .then((response)=>{
             expect(response.status).to.be.equal(200)
             store.setToken(response.body.data.token)
@@ -27,6 +31,8 @@ describe('Store Application Add (Mağaza Oluşturma)', () => {
         .then((response)=>{
             expect(response.status).to.be.equal(200)
             expect(response.body.message).to.equal('Mağaza başvurunuz alındı')
+            cy.log(response.body)
+            expect(util.getSchema(schema.getStoreAddResponseSchema(),response)).to.be.true
         })
 
     });

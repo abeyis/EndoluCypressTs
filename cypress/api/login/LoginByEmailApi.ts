@@ -1,12 +1,12 @@
 import User from '../../models/User'
 
 export default class LoginByEmailApi {
-	createToken(user: User) {
+	createToken(user: User, email : string) {
 		return cy.request({
 			method: 'POST',
 			url: '/api/Auth/loginbymail',
 			body: {
-				email: user.getEmail(),
+				email: email,
 				securityCode: user.getSecurityCode(),
 				test:user.getTest()
 			}
