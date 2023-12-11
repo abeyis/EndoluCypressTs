@@ -31,6 +31,8 @@ export default class Store{
     private town :string
     private token:string
     private storyToken:string
+    private companyGuid: string
+    private storeGuid:string
 
     constructor(){
         this.storeName=faker.internet.userName()
@@ -63,7 +65,18 @@ export default class Store{
         
     
     }
-
+    getCompanyGuid(){
+        return this.companyGuid
+    }
+    setCompanyGuid(companyGuid:string){
+        this.companyGuid=companyGuid
+    }
+    getStoreGuid(){
+        return this.storeGuid
+    }
+    setStoreGuid(storeGuid:string){
+        this.storeGuid=storeGuid
+    }
     getStoryToken(){
         return this.storyToken
     }
