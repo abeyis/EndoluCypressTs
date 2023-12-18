@@ -4,6 +4,7 @@ export default class Schemas{
 private loginResponseSchema:object
 private storeResponseSchema:object
 private storeAddResponseSchema:object
+private cargoAddResponseSchema:object
 
 constructor(){
     this.loginResponseSchema={
@@ -171,6 +172,22 @@ constructor(){
         "message"
       ]
     }
+    this.cargoAddResponseSchema={
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "success",
+        "message"
+      ]
+    }
+    
 }
 
 getLoginResponseSchema(){
@@ -181,6 +198,9 @@ getStoreResponseSchema(){
 }
 getStoreAddResponseSchema(){
   return this.storeAddResponseSchema
+}
+getCargoAddResponseSchema(){
+  return this.cargoAddResponseSchema
 }
 
 }
