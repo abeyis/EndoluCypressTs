@@ -1,0 +1,20 @@
+[
+    {
+        "name":"samet",
+        "email":"smt@gmail.com",
+        "subject":"java",
+        "message":"kotu kurs"
+    },
+    {
+        "name":"salih",
+        "email":"smttt@gmail.com",
+        "subject":"cypress",
+        "message":"kotu kurs.ulyu"
+    },
+    {
+        "name":"shasan",
+        "email":"sahim@gmail.com",
+        "subject":"cypress",
+        "message":"kotu kurs.ulyu"
+    }
+]
